@@ -1,0 +1,22 @@
+<form [formGroup]="myForm" novalidate>
+  <label>
+    Название
+    <input type="text" formControlName="business_name" />
+  </label>
+  <label>
+    Тип
+    <select formControlName="type">
+      <option *ngFor="let type of types" [value]="type.value">
+        {{ type.title }}
+      </option>
+    </select>
+  </label>
+  <label>
+    Вид деятельности
+    <select formControlName="industry">
+      <option *ngFor="let industry of industries" [value]="industry.value">
+        {{ industry.title }}
+      </option>
+    </select>
+  </label>
+</form>

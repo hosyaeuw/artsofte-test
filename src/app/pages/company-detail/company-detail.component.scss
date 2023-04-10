@@ -1,0 +1,21 @@
+.detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    width: 550px;
+
+    img {
+      width: 100%;
+    }
+  }
+}

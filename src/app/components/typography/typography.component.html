@@ -1,0 +1,9 @@
+<span
+  [ngClass]="{
+  'typography_one-line': rows === 1,
+  'typography_many-lines': rows >= 2,
+}"
+  [class]="class"
+>
+  <ng-content></ng-content>
+</span>

@@ -1,0 +1,19 @@
+<div class="checkout-input-container">
+  <label *ngIf="label" class="label" [for]="name">{{ label }}</label>
+  <input
+    type="checkbox"
+    (change)="onChange()"
+    [id]="name"
+    hidden
+    [name]="name"
+  />
+  <label
+    class="checkout-input"
+    [ngClass]="{
+        'checkout-input_checked': isChecked,
+        'checkout-input_size-m': size === 'm',
+        'checkout-input_size-l': size === 'l',
+    }"
+    [for]="name"
+  ></label>
+</div>

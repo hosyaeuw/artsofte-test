@@ -1,0 +1,7 @@
+<div class="layout">
+  <div class="layout__header">
+    <button class="btn-back" *ngIf="onBack" (click)="onBack()">&#8656;</button>
+    <h1 *ngIf="title" class="title">{{ title }}</h1>
+  </div>
+  <ng-content></ng-content>
+</div>

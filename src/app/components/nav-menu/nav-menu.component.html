@@ -1,0 +1,9 @@
+<nav>
+  <ul class="nav">
+    <li *ngFor="let navItem of navItems">
+      <a routerLinkActive="active" [routerLink]="navItem.url">
+        {{ navItem.text }}
+      </a>
+    </li>
+  </ul>
+</nav>

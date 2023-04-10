@@ -1,0 +1,19 @@
+<app-layout title="Карта компаний">
+  <div class="company-yandex-map">
+    <div class="company-yandex-map__companies-list-container">
+      <ul class="companies-list" (click)="onClick($event)">
+        <li
+          *ngFor="let company of companies"
+          [attr.data-company-id]="company.id"
+          class="companies-list__item"
+          [ngClass]="{
+            'companies-list__item_selected': selectedCompany?.id === company.id,
+          }"
+        >
+          {{ company.title }}
+        </li>
+      </ul>
+    </div>
+    <div id="map"></div>
+  </div>
+</app-layout>

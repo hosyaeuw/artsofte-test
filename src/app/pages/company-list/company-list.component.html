@@ -1,0 +1,26 @@
+<app-layout title="Список компаний">
+  <div class="companies">
+    <div class="activities">
+      <div class="sort">
+        <span>Сортировка:</span>
+        <app-compony-sort [items]="sortedItems" [change]="onSortChange"></app-compony-sort>
+      </div>
+      <div class="filter">
+        <span>Фильтрация:</span>
+        <app-compony-filter 
+          [types]="companyTypes" 
+          [industries]="companyIndustries" 
+          [change]="onFilterChange">
+        </app-compony-filter>
+      </div>
+    </div>
+  
+    <ul class="company-list">
+      <li *ngFor='let company of companies'>
+        <a routerLink="/detail/{{company.id}}">
+            <app-compony-item [company]="company" />
+        </a>
+      </li>
+    </ul>
+  </div>
+</app-layout>

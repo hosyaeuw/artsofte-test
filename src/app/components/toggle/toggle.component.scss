@@ -1,0 +1,77 @@
+@use "sass:map";
+
+$transition-seconds: 0.3s;
+
+$heights: (
+  "m": 16px,
+  "l": 24px,
+);
+
+$widths: (
+  "m": 32px,
+  "l": 48px,
+);
+
+$toggle-color: #333;
+$toggle-active-bg-color: #562ed3;
+$toggle-bg-color: grey;
+
+@mixin get_size($size) {
+  height: map.get($heights, $size);
+  width: map.get($widths, $size);
+}
+
+.checkout-input {
+  position: relative;
+  display: block;
+  background: $toggle-bg-color;
+  border-radius: 24px;
+  transition: background $transition-seconds;
+  cursor: pointer;
+
+  &_size {
+    &-m {
+      @include get_size("m");
+    }
+
+    &-l {
+      @include get_size("l");
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    background: $toggle-color;
+    height: 80%;
+    width: 40%;
+    top: 50%;
+    border-radius: 100%;
+    transform: translateX(20%) translateY(-50%);
+    transition: transform $transition-seconds;
+  }
+
+  &_checked {
+    background: $toggle-active-bg-color;
+
+    &::before {
+      transform: translateX(130%) translateY(-50%);
+    }
+  }
+
+  &:hover {
+    &::before {
+      opacity: 0.8;
+    }
+  }
+
+  &-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+.label {
+  user-select: none;
+}

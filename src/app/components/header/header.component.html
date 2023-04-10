@@ -1,0 +1,16 @@
+<div class="header">
+  <div class="header-wrapper">
+    <app-nav-menu></app-nav-menu>
+    <div class="header__left">
+      <div class="header__toggle-container">
+        <app-toggle
+          [label]="toggleLabel"
+          [change]="onToggleChange"
+        ></app-toggle>
+      </div>
+      <app-tooltips description="где кэшировать"
+        ><span class="tooltips">?</span></app-tooltips
+      >
+    </div>
+  </div>
+</div>

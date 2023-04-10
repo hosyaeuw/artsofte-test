@@ -1,0 +1,26 @@
+$width: var(--layout-width, 1120px);
+
+.layout {
+  width: $width;
+  margin: 0 auto;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+
+    .btn-back {
+      $size: 30px;
+      border-radius: 1000px;
+      height: $size;
+      width: $size;
+      border: 1px solid black;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}

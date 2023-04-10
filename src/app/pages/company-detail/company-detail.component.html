@@ -1,0 +1,16 @@
+<app-layout
+  *ngIf="company"
+  [title]="'Компания: ' + company.title"
+  [onBack]="goBack"
+>
+  <div class="detail">
+    <div class="detail__info">
+      <p *ngFor="let field of fields">
+        {{ field.label }}: <span>{{ field.value }}</span>
+      </p>
+    </div>
+    <div class="detail__logo">
+      <img [src]="company.logo" alt="logo" />
+    </div>
+  </div>
+</app-layout>

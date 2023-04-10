@@ -1,0 +1,24 @@
+<div class="company-item" *ngIf="company">
+  <div class="company-item__img-container">
+    <img
+      class="company-item__img"
+      [src]="company.logo"
+      [alt]="'logo_' + company.business_name"
+    />
+  </div>
+  <div class="company-item__info">
+    <div class="company-item__title-container">
+      <h3 class="company-item__title">
+        {{ company.business_name }}
+      </h3>
+    </div>
+    <div class="company-item__text">
+      <app-typography class="company-item__industry" [rows]="1">
+        {{ company.industry }}
+      </app-typography>
+      <app-typography class="company-item__type" [rows]="1">
+        {{ company.type }}
+      </app-typography>
+    </div>
+  </div>
+</div>
